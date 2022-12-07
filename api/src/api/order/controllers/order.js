@@ -49,7 +49,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
 
         // when everything is ok we can then send our data into our database
       await strapi
-        //our .service endpoint now is order 
+        //our .service endpoint now is order, this double colon on api::order.order is important so that our application won't break
         .service("api::order.order")
         //and endstead of findOne we now use .create
         .create({ data: {  products, stripeId: session.id } });
